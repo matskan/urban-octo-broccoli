@@ -1,0 +1,41 @@
+@use './colors.module.scss' as colors;
+
+// .icon {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   font-size: 8em;
+//   height: 150px;
+//   width: 150px;
+//   border-radius: 30px;
+// }
+
+@mixin keyframes($brand) {
+  @keyframes #{$brand} {
+    0% {
+      filter: drop-shadow(0px 0px 2px map-get(colors.$brands, $brand));
+    }
+
+    50% {
+      filter: drop-shadow(0px 0px 6px map-get(colors.$brands, $brand));
+    }
+
+    100% {
+      filter: drop-shadow(0 0 12px map-get(colors.$brands, $brand));
+    }
+  }
+}
+
+@mixin shadow($brand) {
+  $color: map-get(colors.$brands, $brand);
+  animation: #{$brand} 1s linear infinite alternate;
+}
+
+@each $brand, $color in colors.$brands {
+  @include keyframes($brand);
+
+  .#{$brand} {
+    color: $color;
+    @include shadow($brand);
+  }
+}

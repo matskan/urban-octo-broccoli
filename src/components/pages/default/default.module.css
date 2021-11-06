@@ -1,0 +1,12 @@
+.default {
+  height: 100%;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+.text {
+  font-size: 36px;
+  opacity: 0.7;
+}

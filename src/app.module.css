@@ -1,0 +1,23 @@
+:global(*) {
+  box-sizing: border-box;
+}
+
+:global(html) {
+  font-size: 16px;
+}
+
+:global(body) {
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  height: 100vh;
+  display: flex;
+  font-family: sans-serif;
+  background-image: linear-gradient(95.2deg, #f5dfbb 26.8%, #f0d09c 64%);
+}
+
+.workspace {
+  flex: 1;
+}
